@@ -419,31 +419,30 @@ MLE, MME가 낮을 수록 R Peak 실패율이 높은 이유는 BIDMC 데이터�
 #### D. Qualitative Results
 
 
-![image-20211123190832682](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211123190832682.png)
+![image-20211123190832682](./figure/ppg2ecg/image-20211123190832682.png)
 
 Fig. 3. 은 8초 정도의 PPG 신호를 ECG 신호로 재구성한 결과 사진이다.
 
-
 (a) proposed Model
-![image-20211123204638515](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211123204638515.png)
+![image-20211123204638515](./figure/ppg2ecg/image-20211123204638515.png)
 
 * R peak로 정렬된 GroundTruth, Reconstructed ECG들 bottom-right
 * 가장 최고의 모델
 
 (b) proposed Model without QRS Complex-enhanced Loss
-![image-20211123205417081](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211123205417081.png)
+![image-20211123205417081](./figure/ppg2ecg/image-20211123205417081.png)
 
 * (a) 보다 조금 더 큰 손실
 
 (c) Vanilla CNN
-![image-20211123205604445](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211123205604445.png)
+![image-20211123205604445](./figure/ppg2ecg/image-20211123205604445.png)
 
 * 전체적인 평가가 (a) 보다 별로임
 
 
 
 (d) Vanilla LSTM
-![image-20211123205627776](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211123205627776.png)
+![image-20211123205627776](./figure/ppg2ecg/image-20211123205627776.png)
 
 * R Peak의 값이 실제 값과 작기 때문에, 성능이 가장 안좋음
 
@@ -456,14 +455,14 @@ Fig. 3. 은 8초 정도의 PPG 신호를 ECG 신호로 재구성한 결과 사�
 #### E. Sensitivity Analysis and Ablation Study
 
 
-![image-20211123211044258](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211123211044258.png)
+![image-20211123211044258](./figure/ppg2ecg/image-20211123211044258.png)
 
 * 위 표 5는 UQVSD의 하이퍼 파라미터 $\sigma$ 분산에 따른 MLE,MME, $R_{FAIL}$ 수치 변화를 나타냄
 
 * $\sigma$ 가 1 일때 MLE,MME , $R_{FAIL}$ 모두 다 좋은 성능을 보임
 
 
-![image-20211123212536053](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211123212536053.png)
+![image-20211123212536053](./figure/ppg2ecg/image-20211123212536053.png)
 
 * $\beta$ : 가우시안 가중치 함수의 영향을 제어하는 hyper-parameter 이다.
 * 0.5일때 MLE, MME, $R_{FAIL}$ 이 가장 좋은 성능을 낸다.
@@ -473,7 +472,7 @@ Fig. 3. 은 8초 정도의 PPG 신호를 ECG 신호로 재구성한 결과 사�
 따라서 최고의 성능을 내는 하이퍼 파라미ㄴ터는 각각 $\sigma = 1 ,\,\, \beta = 0.5$  일 때 성능이 가장 좋다.
 
 
-![image-20211124174753910](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211124174753910.png)
+![image-20211124174753910](./figure/ppg2ecg/image-20211124174753910.png)
 
 > STN은 Sequence Transformer Network를 의미한다.
 
@@ -490,7 +489,7 @@ $L_{QRS}$는 낮은 MME를 얻도록 도와줌 즉 R Peak Magnitude 에 필수�
 STN과 Attention Network는 정확한 reconstruct R peak의 Location을 찾는데, $L_{QRS}$ 는 R Peak 크기에 크리티컬한 영향을 줌
 
 
-![image-20211125210002965](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211125210002965.png)
+![image-20211125210002965](./figure/ppg2ecg/image-20211125210002965.png)
 
 Data Augmentation은 R Peak Location에 큰 영향을 주었음 TABLE VIII를 보았을 때 DA가 있을때 1.611, 없을때 1.828 의 MLE를 갖는다.
 
@@ -500,7 +499,7 @@ Data Augmentation은 R Peak Location에 큰 영향을 주었음 TABLE VIII를 �
 
 
 
-![image-20211125210801400](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211125210801400.png)
+![image-20211125210801400](./figure/ppg2ecg/image-20211125210801400.png)
 $L_{QRS}$ 를 기본적인 LSTM에 적용시켰을 때에는도 성능이 크게 향상되었음을 TABLE IX를 보고 알 수 있다.
 
 이로써 $L_{QRS}$의 **generalizability** (일반화 가능성)가 입증되었다.
@@ -515,7 +514,7 @@ $L_{QRS}$ 를 기본적인 LSTM에 적용시켰을 때에는도 성능이 크게
 
 1. ECG, PPG를 동시에 측정하지 않아도 PPG 에서 ECG로 직접 변환에 대한 가능성
 2. ECG, PPG 사이의 시간적 정보를 보존함
-   ![image-20211125212713762](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211125212713762.png)
+   ![image-20211125212713762](./figure/ppg2ecg/image-20211125212713762.png)
    * UQVSD 데이터셋에서의 GT의 신호와 재구성된 신호의 **PTT(Pulse Transit Time, 신호 전달 시간)**
    * 위 Fig를 보았을 때, 기존 GroundTruth의 PTT와 재구성된 ECG의 PTT시간의 차이는 10ms 다.
    * 제안된 모델은 PPG와 재구성된 ECG에서 Peak의 시간 차이를 측정하여 PTT를 검색하는 기능을 가지고 있음
@@ -535,7 +534,7 @@ $L_{QRS}$ 를 기본적인 LSTM에 적용시켰을 때에는도 성능이 크게
 ECG R Peak ----- PPG Peak의 시간이 ECG 의 RR interval의 80%임을 지적한 선행연구 [37] 가 있었기에 480ms ~ 800ms 범위 내의 PTT 값을 필터링함
 
 성인의 정상 안정시 심박수는 분당 60~100회 내에 있다. 따라서 5483개의 R Peak 중 323개의 실패한 PTT를 검출됨
-![image-20211126143957847](E:/%ED%95%99%EA%B5%90%EC%83%9D%ED%99%9C(2021-2)/%EA%B8%B0%EA%B3%84%ED%95%99%EC%8A%B5/%EB%85%BC%EB%AC%B8/figure/ppg2ecg/image-20211126143957847.png)
+![image-20211126143957847](./figure/ppg2ecg/image-20211126143957847.png)
 
 Pearson 상관계수를 사용해서 GT와 RS(reconstruct) PTT를 평가하였는데, 결과는 대부분의 PTT가 550ms~750ms에서 소실되었음을 보인다.
 
